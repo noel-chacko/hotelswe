@@ -118,3 +118,61 @@ body {
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
+.book-trip-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.book-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.book-button:hover {
+  background-color: #0056b3;
+}
+
+.expedia-button {
+  background-color: #a9a022;
+}
+
+.expedia-button:hover {
+  background-color: #656112;
+}
+
+.booking-button {
+  background-color: #003580;
+}
+
+.booking-button:hover {
+  background-color: #002a66;
+}
+
+.hotels-button {
+  background-color: #d52b1e;
+}
+
+.hotels-button:hover {
+  background-color: #a32118;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  color: #333;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}

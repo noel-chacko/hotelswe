@@ -18,7 +18,7 @@ import trendsImage from './assets/summer.jpg'; // Represents "Booking Trends"
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const HotelInsights = () => {
+const App = () => {
   const insights = [
     {
       title: "Most Popular Hotel",
@@ -108,7 +108,23 @@ const HotelInsights = () => {
         <section className="chart-section">
           <h3>Hottest Times to Book vs. Most Available Times</h3>
           <div className="chart-container">
-            <Bar key={Math.random()} data={chartData} options={chartOptions} />
+            <Bar data={chartData} options={chartOptions} />
+          </div>
+        </section>
+
+        {/* New Section: Book A Trip Now */}
+        <section className="book-trip-section">
+          <h2>Book A Trip Now</h2>
+          <div className="button-group">
+            <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer">
+              <button className="book-button expedia-button">Expedia</button>
+            </a>
+            <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">
+              <button className="book-button booking-button">Booking.com</button>
+            </a>
+            <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer">
+              <button className="book-button hotels-button">Hotels.com</button>
+            </a>
           </div>
         </section>
       </main>
@@ -119,4 +135,4 @@ const HotelInsights = () => {
   );
 };
 
-export default HotelInsights;
+export default App;
