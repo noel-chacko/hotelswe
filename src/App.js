@@ -113,7 +113,7 @@ const HotelInsights = () => {
         </section>
       </main>
       <footer className="footer">
-        <p>© 2024 Hotel Insights. All rights reserved.</p>
+        <p>Temple University and Ajman University</p>
       </footer>
     </div>
   );
