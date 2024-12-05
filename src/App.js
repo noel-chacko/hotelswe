@@ -108,7 +108,7 @@ const HotelInsights = () => {
         </section>
       </main>
       <footer className="footer">
-        <p>Temple University and Ajman University</p>
+        <p>Ajman University and Temple University</p>
       </footer>
     </div>
   );
