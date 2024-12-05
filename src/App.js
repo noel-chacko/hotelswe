@@ -1,35 +1,39 @@
 import React from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Bar } from "react-chartjs-2";
-import './App.css';
+import "./App.css";
+
+import cityImage from './assets/city.jpeg';
+import breakfastImage from './assets/breakfast.jpg';
+import trendsImage from './assets/summer.jpg'; // Represents "Booking Trends"
+
+// Register Chart.js components
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const HotelInsights = () => {
   const insights = [
     {
       title: "Most Popular Hotel",
       content: "66.4% of guests prefer City Hotels over Resort Hotels.",
-      image: "https://via.placeholder.com/300x200?text=City+Hotel",
+      image: cityImage, // Use the imported image
     },
     {
       title: "Guest Preferences",
       content: "78.8% of guests opt for 'Bed and Breakfast' meal plans.",
-      image: "https://via.placeholder.com/300x200?text=Breakfast",
+      image: breakfastImage, // Use the imported image
     },
     {
       title: "Booking Trends",
-      content:
-        "August and July are the busiest months, while January sees the lowest bookings.",
-      image: "https://via.placeholder.com/300x200?text=Booking+Trends",
-    },
-    {
-      title: "Guest Origins",
-      content: "Most guests come from Portugal, followed by the UK and France.",
-      image: "https://via.placeholder.com/300x200?text=Portugal",
-    },
-    {
-      title: "Cancellations",
-      content:
-        "37.04% of bookings are canceled. City Hotels face more cancellations (30%) than Resort Hotels (23%).",
-      image: "https://via.placeholder.com/300x200?text=Cancellations",
+      content: "August and July are the busiest months, while January sees the lowest bookings.",
+      image: trendsImage, // Use the imported image
     },
   ];
 
@@ -99,16 +103,17 @@ const HotelInsights = () => {
             </div>
           ))}
         </div>
+
         {/* Chart Section */}
         <section className="chart-section">
           <h3>Hottest Times to Book vs. Most Available Times</h3>
           <div className="chart-container">
-            <Bar data={chartData} options={chartOptions} />
+            <Bar key={Math.random()} data={chartData} options={chartOptions} />
           </div>
         </section>
       </main>
       <footer className="footer">
-        <p>Ajman University and Temple University</p>
+        <p>© 2024 Hotel Insights. All rights reserved.</p>
       </footer>
     </div>
   );
