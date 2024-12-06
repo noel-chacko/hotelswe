@@ -7,11 +7,19 @@ body {
   color: #333;
 }
 
+
+.header-container {
+  background: url('/src/images/wave2.jpg') no-repeat center center;
+  background-size: cover;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Header */
 .header {
   text-align: center;
   padding: 40px 0;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -179,9 +187,7 @@ body {
 
 
 .navbar {
-  background-color: whitesmoke;
   padding: 15px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 

@@ -9,6 +9,12 @@ import plot6 from "../images/plot6.png";
 import plot9 from "../images/plot9.png";
 import plot18 from "../images/plot18.png";
 import plot2nd3 from "../images/plot2nd3.png";
+import kf1 from "../images/kf1.png";
+import kf2 from "../images/kf2.png";
+import kf3 from "../images/kf3.png";
+import dashboard1 from "../images/dashboard1.png";
+
+
 
 
 
@@ -23,6 +29,14 @@ const Findings = () => {
                 <h2>{title}</h2>
                 <img src={imageSrc} alt={altText} className="chart-image" />
                 <p>{description}</p>
+            </div>
+        );
+    };
+
+    const ChartSection2 = ({ title, imageSrc, altText, description }) => {
+        return (
+            <div className="chart-section">
+                <img src={imageSrc} alt={altText} className="chart-image2" />
             </div>
         );
     };
@@ -109,6 +123,33 @@ description="The lead time is clearly skewed to the right. We can observe that t
                 altText="plot2nd3"
 description="This graph depicts the most popular sort of customer at each hotel and how much they spend on a daily basis. Transient customers from both hotels spend the most money. Contract customers, as well as group and transient parties, tend to spend significantly more at city hotels. This means that resort hotels are substantially more affordable for contract, group, and transient-party customers. It means that transient customers produce a greatest profit."
             />
+
+            {/* Dashboard*/}
+            <ChartSection2
+                imageSrc={dashboard1}
+                altText="dashboard1"
+            />
+
+            {/* KeyFinding*/}
+            <ChartSection2
+                imageSrc={kf1}
+                altText="kf1"
+            />
+
+            {/* KeyFinding*/}
+            <ChartSection2
+                imageSrc={kf2}
+                altText="kf2"
+            />
+
+            {/* KeyFinding*/}
+            <ChartSection2
+                imageSrc={kf3}
+                altText="kf3"
+            />
+
+
+
 
         </div>
     );
