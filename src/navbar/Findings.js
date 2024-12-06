@@ -31,17 +31,14 @@ const Findings = () => {
         <div className="findings-container">
             <h1>Findings</h1>
 
-            {/* Chart 1 */}
+            {/* Chart 9*/}
             <ChartSection
-                title="Resort vs City Reservations"
-                imageSrc={plot1}
-                altText="plot1"
-                description="33.6% of people have made reservations at resort hotels, while 66.4% of people
-        have made reservations at city hotels. Hotel owners might invest in city hotels
-        more now for more revenue. However, only 33.6% of visitors booking reservations
-        at resort hotels raises concern. Owners need to invest to make resort hotels more
-        appealing!"
+                title="Countries & Regions"
+                imageSrc={plot9}
+                altText="plot9"
+                description="From this map, we can see that the majority of visitors—nearly 18k—come from Portugal, followed by 8k from the United Kingdom, followed by France, Spain, Germany, and other European nations. With the help of this map, management could increase promotions to keep existing European customers and investigate why other nationalities aren't coming to stay at the hotels."
             />
+
 
             {/* Chart 2 */}
             <ChartSection
@@ -85,12 +82,16 @@ const Findings = () => {
 description="The lead time is clearly skewed to the right. We can observe that the mode is from 0 to 1, and there is also a significant increase between the bins 296-297, which is intriguing! It signifies that a good number of people make their reservations before the 297th day. Additionally, this plot demonstrates that the majority of people do not arrange their accommodations well in advance of their arrival."
             />
 
-            {/* Chart 9*/}
+            {/* Chart 1 */}
             <ChartSection
-                title="Countries & Regions"
-                imageSrc={plot9}
-                altText="plot9"
-                description="From this map, we can see that the majority of visitors—nearly 18k—come from Portugal, followed by 8k from the United Kingdom, followed by France, Spain, Germany, and other European nations. With the help of this map, management could increase promotions to keep existing European customers and investigate why other nationalities aren't coming to stay at the hotels."
+                title="Resort vs City Reservations"
+                imageSrc={plot1}
+                altText="plot1"
+                description="33.6% of people have made reservations at resort hotels, while 66.4% of people
+        have made reservations at city hotels. Hotel owners might invest in city hotels
+        more now for more revenue. However, only 33.6% of visitors booking reservations
+        at resort hotels raises concern. Owners need to invest to make resort hotels more
+        appealing!"
             />
 
             {/* Chart 18*/}
