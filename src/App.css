@@ -7,11 +7,19 @@ body {
   color: #333;
 }
 
+
+.header-container {
+  background: url('/src/images/wave2.jpg') no-repeat center center;
+  background-size: cover;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Header */
 .header {
   text-align: center;
   padding: 40px 0;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -176,3 +184,53 @@ body {
   padding: 15px;
   margin-top: 40px;
 }
+
+
+.navbar {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: royalblue;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: dodgerblue;
+}
+
+.navbar button{
+  font-size: 0.95em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5c8d;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #e04573;
+  transform: scale(1.05);
+}
+
+.navbar button:active {
+  transform: scale(0.90);
+}
+
+
+
+
