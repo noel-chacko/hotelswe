@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,11 +14,15 @@ import "./App.css";
 import cityImage from './assets/city.jpeg';
 import breakfastImage from './assets/breakfast.jpg';
 import trendsImage from './assets/summer.jpg'; // Represents "Booking Trends"
+import AboutUs from "./navbar/AboutUs";
+import Findings from "./navbar/Findings"; // Import Findings component
+import "./navbar/AboutUs.css";
 
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const App = () => {
+  const [currentPage, setCurrentPage] = useState("home");
   const insights = [
     {
       title: "Most Popular Hotel",
@@ -81,57 +85,83 @@ const App = () => {
     },
   };
 
+  const renderPage = () => {
+    if (currentPage === "about-us") {
+      return <AboutUs />;
+    }
+    if (currentPage === "findings") {
+      return <Findings />;
+    }
+    return <div></div>;
+  };
+
   return (
-    <div className="container">
-      <header className="header">
-        <h1 className="header-title">Hotel Booking Insights</h1>
-      </header>
-      <main className="main">
-        <h2 className="sub-header">Key Insights</h2>
-        <div className="card-container">
-          {insights.map((insight, index) => (
-            <div key={index} className="card">
-              <img
-                src={insight.image}
-                alt={insight.title}
-                className="card-image"
-              />
-              <div className="card-content">
-                <h3 className="card-title">{insight.title}</h3>
-                <p>{insight.content}</p>
-              </div>
+      <div className="container">
+        <header className="header">
+          <h1 className="header-title">Hotel Booking Insights</h1>
+        </header>
+
+        <nav className="navbar">
+          <ul>
+            <li>
+              <button className="nav-button" onClick={() => setCurrentPage("home")}>Home</button>
+            </li>
+            <li>
+              <button className="nav-button" onClick={() => setCurrentPage("about-us")}>About Us</button>
+            </li>
+            <li>
+              <button className="nav-button" onClick={() => setCurrentPage("findings")}>Findings</button>
+            </li>
+          </ul>
+        </nav>
+
+        <main className="main">
+          {renderPage()}
+          <h2 className="sub-header">Key Insights</h2>
+          <div className="card-container">
+            {insights.map((insight, index) => (
+                <div key={index} className="card">
+                  <img
+                      src={insight.image}
+                      alt={insight.title}
+                      className="card-image"
+                  />
+                  <div className="card-content">
+                    <h3 className="card-title">{insight.title}</h3>
+                    <p>{insight.content}</p>
+                  </div>
+                </div>
+            ))}
+          </div>
+
+          {/* Chart Section */}
+          <section className="chart-section">
+            <h3>Hottest Times to Book vs. Most Available Times</h3>
+            <div className="chart-container">
+              <Bar data={chartData} options={chartOptions}/>
             </div>
-          ))}
-        </div>
+          </section>
 
-        {/* Chart Section */}
-        <section className="chart-section">
-          <h3>Hottest Times to Book vs. Most Available Times</h3>
-          <div className="chart-container">
-            <Bar data={chartData} options={chartOptions} />
-          </div>
-        </section>
-
-        {/* New Section: Book A Trip Now */}
-        <section className="book-trip-section">
-          <h2>Book A Trip Now</h2>
-          <div className="button-group">
-            <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer">
-              <button className="book-button expedia-button">Expedia</button>
-            </a>
-            <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">
-              <button className="book-button booking-button">Booking.com</button>
-            </a>
-            <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer">
-              <button className="book-button hotels-button">Hotels.com</button>
-            </a>
-          </div>
-        </section>
-      </main>
-      <footer className="footer">
-        <p>Temple University and Ajman University</p>
-      </footer>
-    </div>
+          {/* New Section: Book A Trip Now */}
+          <section className="book-trip-section">
+            <h2>Book A Trip Now!</h2>
+            <div className="button-group">
+              <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer">
+                <button className="book-button expedia-button">Expedia</button>
+              </a>
+              <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">
+                <button className="book-button booking-button">Booking.com</button>
+              </a>
+              <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer">
+                <button className="book-button hotels-button">Hotels.com</button>
+              </a>
+            </div>
+          </section>
+        </main>
+        <footer className="footer">
+          <p>Temple University & Ajman University</p>
+        </footer>
+      </div>
   );
 };
 
